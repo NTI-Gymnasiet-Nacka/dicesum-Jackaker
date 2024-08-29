@@ -1,9 +1,31 @@
 # Dice sum probability calculator
-# Författare: 
-# Datum:
+# Författare: Jack Åkerblom
+# Datum:20240822
 
-def main():
-    user_input = input().split(" ")
+user_input = input().split(" ")
+N = int(user_input[0])
+M = int(user_input[1])
 
-if __name__ == "__main__":
-    main()
+def main(N,M):
+    lista=[]
+    for f in range(1,N+1):
+        for i in range(1,M+1):
+            lista.append(f+i)
+        lista=sorted(lista)
+    return lista
+
+lista2=[]
+lista3=[]
+for t in range(min(main(N,M)),max(main(N,M))+1):
+    lista2.append(main(N,M).count(t))
+    lista3.append(t)
+
+c=lista2.index(max(lista2))
+e=len(lista2)-c
+
+string=""
+for r in range(c,e):
+    string+=str(lista3[r])
+    string+=" "
+
+print(string)
