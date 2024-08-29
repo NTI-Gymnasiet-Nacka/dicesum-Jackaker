@@ -23,9 +23,6 @@ for t in range(min(main(N,M)),max(main(N,M))+1):
 c=lista2.index(max(lista2))
 e=len(lista2)-c
 
-string=""
 for r in range(c,e):
-    string+=str(lista3[r])
-    string+=" "
+    print(str(lista3[r]))
 
-print(string)
